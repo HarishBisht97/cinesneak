@@ -6,7 +6,6 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../Utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Slice/userSlice";
 
@@ -15,7 +14,6 @@ const Login = () => {
   const toggleSigninForm = () => setIsSigninForm(!isSigninForm);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const email = useRef(null);
@@ -23,7 +21,6 @@ const Login = () => {
 
   const signUpSuccess = (user) => {
     dispatch(addUser({ email: user.email, accessToken: user.accessToken }));
-    navigate("/browse");
   };
 
   const handleFormSubmit = (email, password) => {

@@ -19,7 +19,6 @@ const Header = () => {
     signOut(auth)
       .then(() => {
         dispatch(removeUser());
-        navigate("/");
       })
       .catch(() => {
         navigate("/error");
