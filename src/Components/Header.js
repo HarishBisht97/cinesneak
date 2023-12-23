@@ -4,12 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeUser } from "../Slice/userSlice";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-
-const NETFLIX_LOGO =
-  "https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png";
-
-const SIGN_UP_URL =
-  "https://occ-0-3646-3647.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABXYofKdCJceEP7pdxcEZ9wt80GsxEyXIbnG_QM8znksNz3JexvRbDLr0_AcNKr2SJtT-MLr1eCOA-e7xlDHsx4Jmmsi5HL8.png?r=1d4";
+import { NETFLIX_LOGO, SIGN_UP_URL } from "../Utils/constants";
 
 const Header = () => {
   const user = auth.currentUser;
@@ -26,13 +21,17 @@ const Header = () => {
   };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         navigate("/browse");
       } else {
         navigate("/");
       }
     });
+
+    return () => {
+      unSubscribe();
+    };
   }, []);
 
   return (
