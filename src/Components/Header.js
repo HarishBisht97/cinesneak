@@ -47,7 +47,9 @@ const Header = () => {
               alt="netflix-logo"
               src={SIGN_UP_URL}
             ></img>
-            <span onClick={() => signingOut()}>Sign-Out</span>
+            <span className="text-white" onClick={() => signingOut()}>
+              Sign-Out
+            </span>
           </div>
         )}
       </div>
