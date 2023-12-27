@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { useSelector } from "react-redux";
 import VideoBackground from "./VideoBackground";
 import VideoTitle from "./VideoTitle";
@@ -8,7 +8,7 @@ const PrimaryMovieContainer = () => {
     (store) => store.movie?.nowPlayingMovies
   );
   if (!nowPlayingMovies?.length) return null;
-  const movieFocus = nowPlayingMovies[0];
+  const movieFocus = nowPlayingMovies[2];
 
   return (
     <div>
@@ -18,4 +18,4 @@ const PrimaryMovieContainer = () => {
   );
 };
 
-export default PrimaryMovieContainer;
+export default memo(PrimaryMovieContainer);
