@@ -10,13 +10,17 @@ const Browse = () => {
   useNowPlayingMovies();
 
   const isSearching = useSelector((store) => store.search.isSearching);
+  const nowPlayingMovies = useSelector((store) => store.movie.nowPlayingMovies);
+
+  if (!nowPlayingMovies?.length) return null;
+  const movieFocus = nowPlayingMovies[0];
 
   return (
     <div>
       <Header />
       {!isSearching ? (
         <div>
-          <PrimaryMovieContainer />
+          <PrimaryMovieContainer movieFocus={movieFocus} />
           <SecondaryMovieContainer />
         </div>
       ) : (
