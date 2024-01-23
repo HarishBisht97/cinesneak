@@ -43,6 +43,7 @@ const Login = () => {
           signUpSuccess(userCredential.user);
         })
         .catch((error) => {
+          console.log("Err", error);
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + "-" + errorMessage);
@@ -111,8 +112,8 @@ const Login = () => {
         </button>
         <p className="p-4 my-6 hover:cursor-pointer" onClick={toggleSigninForm}>
           {isSigninForm
-            ? "Already registered! Sign-in now"
-            : "Are you new to netflix Sign-up now"}
+            ? "Are you new to netflix Sign-up now"
+            : "Already registered! Sign-in now"}
         </p>
       </form>
     </div>

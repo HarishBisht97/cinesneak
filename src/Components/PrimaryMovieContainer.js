@@ -7,7 +7,7 @@ const PrimaryMovieContainer = ({ movieFocus }) => {
     movieFocus && (
       <div>
         <VideoTitle movie={movieFocus} />
-        <VideoBackground movieId={movieFocus.id} />
+        <VideoBackground movieId={movieFocus.id} mute={1} />
       </div>
     )
   );

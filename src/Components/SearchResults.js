@@ -9,6 +9,7 @@ const SearchResults = () => {
   const searchedMovie = useSelector((store) => store.search.searchedMovie);
   const movieResults = useSelector((store) => store.search.movieResults);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchMovies = async () => {
     console.log("searchedMovie", searchedMovie);
 
@@ -23,7 +24,7 @@ const SearchResults = () => {
 
   useEffect(() => {
     searchedMovie && fetchMovies();
-  }, [searchedMovie]);
+  }, [searchedMovie, fetchMovies]);
 
   return (
     <div>
