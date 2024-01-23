@@ -62,7 +62,8 @@ const useNowPlayingMovies = () => {
     getPopularMovies();
     getUpcomingMovies();
     getTopRatedMovies();
-    getTrendingMovies()
+    getTrendingMovies();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 
