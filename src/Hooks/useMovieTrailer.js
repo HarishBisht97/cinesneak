@@ -15,7 +15,7 @@ const useMovieTrailer = async (movieId) => {
     const trailers = await movieTrailers.json();
     const trailer =
       trailers?.results?.filter((each) => each.type === "Trailer")[0] ||
-      trailers?.results[0];
+      (trailers?.results && trailers?.results[0]);
 
     dispatch(storeMovieTrailer(trailer));
   };

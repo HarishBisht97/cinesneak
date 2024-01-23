@@ -9,7 +9,7 @@ import SearchResults from "./SearchResults";
 const Browse = () => {
   useNowPlayingMovies();
 
-  const isSearching = useSelector((store) => store.search.isSearching);
+  const searchedMovie = useSelector((store) => store.search.searchedMovie);
   const nowPlayingMovies = useSelector((store) => store.movie.nowPlayingMovies);
 
   if (!nowPlayingMovies?.length) return null;
@@ -18,7 +18,7 @@ const Browse = () => {
   return (
     <div>
       <Header />
-      {!isSearching ? (
+      {!searchedMovie ? (
         <div>
           <PrimaryMovieContainer movieFocus={movieFocus} />
           <SecondaryMovieContainer />
