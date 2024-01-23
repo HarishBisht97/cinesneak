@@ -7,6 +7,6 @@ export const validateForm = (email, password) => {
   const isPasswordValid = passwordRegex.test(password);
 
   if (!isEmailValid) return "Invalid Email!";
-  if (!isPasswordValid) return "Invalid Password!";
+  if (!isPasswordValid) return "Password too weak";
   return null;
 };

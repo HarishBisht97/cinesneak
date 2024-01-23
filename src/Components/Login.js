@@ -43,7 +43,6 @@ const Login = () => {
           signUpSuccess(userCredential.user);
         })
         .catch((error) => {
-          console.log("Err", error);
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + "-" + errorMessage);
