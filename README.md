@@ -2,6 +2,9 @@
 
 https://cinesneak.netlify.app/
 
+Preview : <img width="1470" alt="image" src="https://github.com/HarishBisht97/cinesneak/assets/143319985/43b94db0-2e6f-4646-a573-b2651a7be4c3">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
