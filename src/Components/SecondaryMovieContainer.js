@@ -11,7 +11,7 @@ const SecondaryMovieContainer = () => {
 
   return (
     <div className=" bg-black">
-      <div className="relative z-20 -mt-96">
+      <div className="lg:-mt-64 relative z-50">
         <MovieContainer
           title={"Now Playing Movies"}
           movies={nowPlayingMovies}

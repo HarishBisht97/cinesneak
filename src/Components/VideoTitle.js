@@ -1,15 +1,19 @@
 import React from "react";
 
 const VideoTitle = ({ movie }) => {
+  const { original_title, overview } = movie;
+
   return (
-    <div className="absolute w-screen aspect-video p-12 pt-28 bg-gradient-to-r from-black text-white">
-      <div className="text-6xl  font-bold  pt-40">{movie.original_title}</div>
-      <div className="text-2xl w-2/6 pt-16">{movie.overview}</div>
-      <div className="pt-10">
-        <button className="bg-white text-black w-32 h-16 rounded-lg mr-4  text-2xl hover:bg-opacity-80">
-          ▶️ Play
+    <div className="absolute w-full aspect-video pt-60 pb-60 md:pt-52  pl-10 md:pl-20 px-10 bg-gradient-to-r from-black  text-white">
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 w-full md:w-1/2">
+        {original_title}
+      </h1>
+      <p className=" hidden lg:inline-block w-2/5 ">{overview}</p>
+      <div className="mt-4">
+        <button className="bg-white text-black md:w-24 w-20 md:p-2 p-1 rounded-lg hover:bg-opacity-80">
+          Play
         </button>
-        <button className="bg-slate-600 text-white w-36 h-16 rounded-lg text-2xl hover:bg-opacity-80">
+        <button className="bg-gray-500 text-white bg-opacity-50 md:w-24 w-20 md:p-2 p-1 mx-5 rounded-lg hover:bg-opacity-30">
           More Info
         </button>
       </div>

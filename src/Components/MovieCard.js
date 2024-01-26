@@ -16,12 +16,14 @@ const MovieCard = ({ movie }) => {
   };
 
   return (
-    <img
-      className="w-64 p-4"
-      alt="movie-tile"
-      onClick={selectMovie}
-      src={TMDB_IMAGE_CDN_URL + movie?.poster_path}
-    />
+    <div className="w-36 md:w-48 pr-4 ">
+      <img
+        className="rounded-lg"
+        alt="movie-tile"
+        onClick={selectMovie}
+        src={TMDB_IMAGE_CDN_URL + movie?.poster_path}
+      />
+    </div>
   );
 };
 
