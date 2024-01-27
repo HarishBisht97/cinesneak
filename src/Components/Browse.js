@@ -13,7 +13,7 @@ const Browse = () => {
   const nowPlayingMovies = useSelector((store) => store.movie.nowPlayingMovies);
 
   if (!nowPlayingMovies?.length) return null;
-  const movieFocus = nowPlayingMovies[0];
+  const movieFocus = nowPlayingMovies[1];
 
   return (
     <div>

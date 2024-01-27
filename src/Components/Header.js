@@ -22,6 +22,10 @@ const Header = () => {
       });
   };
 
+  const navigateHome = () => {
+    navigate("/browse");
+  };
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -41,39 +45,54 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-screen z-10 px-8 py-2 bg-gradient-to-b from-gray-950 flex justify-between">
+    <div className="absolute w-screen z-10 px-8 py-2 bg-gradient-to-b from-gray-950 flex justify-between align-middle ">
       <div>
-        <img className="w-52 " alt="netflix-logo" src={NETFLIX_LOGO}></img>
+        <img
+          className="w-52"
+          alt="netflix-logo"
+          src={NETFLIX_LOGO}
+          onClick={navigateHome}
+        ></img>
       </div>
       <div>
         {user && (
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center align-middle mt-2">
             {isSearching && (
               <input
-                className="p-2 h-11 mr-3 w-72 bg-inherit border-spacing-2 text-blue-50 outline backdrop-opacity-95 rounded-md  transition duration-150 ease-out hover:ease-in"
+                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 relative m-0 block min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base text-white font-normal leading-[1.6] outline-none focus:z-[3] focus:border-primary focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary focus:bg-slate-900"
+                placeholder="Search"
                 onChange={(e) => {
                   dispatch(setSearchValue(e.target.value));
                 }}
               ></input>
             )}
             <button
-              className="w-24 h-12 rounded-sm text-white bg-slate-500 hover:opacity-50"
+              class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-neutral-700 dark:text-neutral-200"
+              id="basic-addon2"
               onClick={setSearch}
             >
-              Search
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-6 w-8"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                  clip-rule="evenodd"
+                />
+              </svg>
             </button>
-            <div className="flex-col pl-8 justify-items-center">
+            <div className="flex-col pl-4 justify-center align-middle transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
               <div>
                 <img
-                  className="w-14 rounded-sm"
+                  className="w-10 h-10 rounded-sm"
+                  data-tooltip-target="tooltip-default"
                   alt="netflix-logo"
                   src={SIGN_UP_URL}
+                  onClick={() => signingOut()}
                 />
-              </div>
-              <div>
-                <span className="text-white" onClick={() => signingOut()}>
-                  Sign-Out
-                </span>
               </div>
             </div>
           </div>
