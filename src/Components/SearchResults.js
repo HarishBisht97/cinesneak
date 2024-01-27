@@ -9,22 +9,22 @@ const SearchResults = () => {
   const searchedMovie = useSelector((store) => store.search.searchedMovie);
   const movieResults = useSelector((store) => store.search.movieResults);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchMovies = async () => {
-    console.log("searchedMovie", searchedMovie);
+    if (searchedMovie) {
+      const movieResults = await fetch(
+        `https://api.themoviedb.org/3/search/movie?query=${searchedMovie}&include_adult=false&language=en-US&page=1`,
+        TMDB_API_OPTIONS
+      );
+      const movies = await movieResults.json();
 
-    const movieResults = await fetch(
-      `https://api.themoviedb.org/3/search/movie?query=${searchedMovie}&include_adult=false&language=en-US&page=1`,
-      TMDB_API_OPTIONS
-    );
-    const movies = await movieResults.json();
-
-    dispatch(setMovieResults(movies));
+      dispatch(setMovieResults(movies));
+    }
   };
 
   useEffect(() => {
     searchedMovie && fetchMovies();
-  }, [searchedMovie, fetchMovies]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fetchMovies]);
 
   return (
     <div>

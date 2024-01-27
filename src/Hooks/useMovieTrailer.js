@@ -6,7 +6,6 @@ import { useEffect } from "react";
 const useMovieTrailer = async (movieId) => {
   const dispatch = useDispatch();
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchMovieTrailer = async () => {
     const movieTrailers = await fetch(
       `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`,
@@ -22,7 +21,8 @@ const useMovieTrailer = async (movieId) => {
 
   useEffect(() => {
     fetchMovieTrailer();
-  }, [fetchMovieTrailer]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 };
 
 export default useMovieTrailer;
