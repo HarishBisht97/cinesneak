@@ -11,7 +11,6 @@ const MovieCard = ({ movie }) => {
   const dispatch = useDispatch();
   const selectMovie = () => {
     dispatch(setSelectedMovie(movie));
-    console.log("LINK_ROUTE", LINK_ROUTE);
     navigate(LINK_ROUTE);
   };
 
