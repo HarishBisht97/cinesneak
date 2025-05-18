@@ -11,6 +11,9 @@ export const TMDB_KEY = process.env.REACT_APP_TMDB_KEY;
 export const FIREBASE_KEY = process.env.REACT_APP_FIREBASE_KEY;
 export const FIREBASE_APP_ID = process.env.REACT_APP_FIREBASE_APP_ID;
 
+export const DUMMY_EMAIL = "harishtest@gmail.com";
+export const DUMMY_PASSWORD = "harishtest";
+
 export const TMDB_API_OPTIONS = {
   method: "GET",
   headers: {

@@ -8,14 +8,16 @@ import {
 import { auth } from "../Utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Slice/userSlice";
-import { APP_BACKGROUND_IMAGE } from "../Utils/constants";
-import { useNavigate } from "react-router-dom";
+import {
+  APP_BACKGROUND_IMAGE,
+  DUMMY_EMAIL,
+  DUMMY_PASSWORD,
+} from "../Utils/constants";
 
 const Login = () => {
   const [isSigninForm, setIsSigninForm] = useState(true);
   const toggleSigninForm = () => setIsSigninForm(!isSigninForm);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const email = useRef(null);
@@ -67,7 +69,7 @@ const Login = () => {
   };
 
   const handleSkipSignIn = () => {
-    signInWithEmailAndPassword(auth, "harishtest@gmail.com", "harishtest")
+    signInWithEmailAndPassword(auth, DUMMY_EMAIL, DUMMY_PASSWORD)
       .then((userCredential) => {
         signUpSuccess(userCredential.user);
       })
