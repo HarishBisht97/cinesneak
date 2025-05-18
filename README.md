@@ -1,9 +1,42 @@
-# Preview
+# CineSneak - Movie Trailer Platform
 
-https://cinesneak.netlify.app/
+CineSneak is a modern web application that provides users with a Netflix-like experience for discovering and watching movie trailers. Built with React and Firebase, it offers a seamless interface for browsing upcoming movies and their trailers.
 
-Preview : <img width="1470" alt="image" src="https://github.com/HarishBisht97/cinesneak/assets/143319985/43b94db0-2e6f-4646-a573-b2651a7be4c3">
+## Features
 
+- **Authentication System**
+
+  - Secure user authentication using Firebase
+  - Sign up and sign in functionality
+  - Guest access option for quick browsing
+
+- **Movie Discovery**
+
+  - Browse upcoming movies
+  - Watch movie trailers
+  - Search functionality to find specific movies
+  - Netflix-style UI with smooth animations
+
+- **User Experience**
+  - Responsive design that works on all devices
+  - Modern UI with Netflix-inspired aesthetics
+  - Smooth transitions and hover effects
+  - Background video playback for featured content
+
+## Tech Stack
+
+- React.js for the frontend
+- Firebase for authentication
+- Redux for state management
+- Tailwind CSS for styling
+- TMDB API for movie data
+
+## Live Demo
+
+Visit [CineSneak](https://cinesneak.netlify.app/) to experience the application.
+
+Preview:
+<img width="1470" alt="image" src="https://github.com/HarishBisht97/cinesneak/assets/143319985/43b94db0-2e6f-4646-a573-b2651a7be4c3">
 
 # Getting Started with Create React App
 
