@@ -9,12 +9,13 @@ import { auth } from "../Utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Slice/userSlice";
 import { APP_BACKGROUND_IMAGE } from "../Utils/constants";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [isSigninForm, setIsSigninForm] = useState(true);
   const toggleSigninForm = () => setIsSigninForm(!isSigninForm);
   const [errorMessage, setErrorMessage] = useState(null);
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const email = useRef(null);
@@ -63,6 +64,16 @@ const Login = () => {
           setErrorMessage(errorCode + "-" + errorMessage);
         });
     }
+  };
+
+  const handleSkipSignIn = () => {
+    signInWithEmailAndPassword(auth, "harishtest@gmail.com", "harishtest")
+      .then((userCredential) => {
+        signUpSuccess(userCredential.user);
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+      });
   };
 
   return (
@@ -115,6 +126,14 @@ const Login = () => {
             ? "Are you new to netflix Sign-up now"
             : "Already registered! Sign-in now"}
         </p>
+        <div className="border-t border-gray-700 my-4"></div>
+        <button
+          type="button"
+          onClick={handleSkipSignIn}
+          className="p-4 my-2 w-full bg-gray-700 hover:bg-gray-600 rounded-md transition-colors duration-200"
+        >
+          Skip Sign In
+        </button>
       </form>
     </div>
   );
