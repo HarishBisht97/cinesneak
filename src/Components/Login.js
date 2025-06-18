@@ -81,12 +81,12 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute">
+      <div className="absolute inset-0 w-full h-full">
         <img
           alt="background-img"
-          className="bg-gradient-to-t from-black"
+          className="w-full h-full object-cover bg-gradient-to-t from-black"
           src={APP_BACKGROUND_IMAGE}
-        ></img>
+        />
       </div>
       <form
         className="w-4/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
