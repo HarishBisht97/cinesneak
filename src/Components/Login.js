@@ -79,7 +79,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="relative h-screen overflow-hidden">
       <Header />
       <div className="absolute inset-0 w-full h-full">
         <img
